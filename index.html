@@ -1,2 +1,12 @@
 你好朋友！欢迎光临王涛的网页！
 wget https://git.io/vpnsetup-centos -O vpnsetup.sh && sh vpnsetup.sh
+
+wget https://git.io/vpnsetup-centos -O vpnsetup.sh && vpnsetup.sh
+
+vim /etc/ipsec.secrets                PSK "666666"   
+vim /etc/ppp/chap-secrets        "vpnuser" l2tpd "888888" *
+
+systemctl restart ipsec xl2tpd
+
+service ipsec restart
+service xl2tpd restart
